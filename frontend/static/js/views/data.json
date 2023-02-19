@@ -1,1 +1,31 @@
-{"lat":48.8589,"lon":2.32,"dt":"2023-02-19T17:06:35.000Z","dtRaw":1676826395,"timezone":3600,"astronomical":{"sunrise":"2023-02-19T06:52:47.000Z","sunriseRaw":1676789567,"sunset":"2023-02-19T17:16:43.000Z","sunsetRaw":1676827003},"weather":{"temp":{"cur":12.07},"feelsLike":{"cur":11.08},"pressure":1029,"humidity":67,"clouds":40,"visibility":10000,"wind":{"deg":290,"speed":4.63},"rain":0,"snow":0,"conditionId":802,"main":"Clouds","description":"scattered clouds","icon":{"url":"http://openweathermap.org/img/wn/03d@2x.png","raw":"03d"}}}
+{
+    "lat": 48.8589,
+    "lon": 2.32,
+    "dt": "2023-02-19T17:44:17.000Z",
+    "dtRaw": 1676828657,
+    "timezone": 3600,
+    "astronomical": {
+        "sunrise": "2023-02-19T06:52:47.000Z",
+        "sunriseRaw": 1676789567,
+        "sunset": "2023-02-19T17:16:43.000Z",
+        "sunsetRaw": 1676827003
+    },
+    "weather": {
+        "temp": { "cur": 10.75 },
+        "feelsLike": { "cur": 9.76 },
+        "pressure": 1029,
+        "humidity": 72,
+        "clouds": 0,
+        "visibility": 10000,
+        "wind": { "deg": 300, "speed": 3.09 },
+        "rain": 0,
+        "snow": 0,
+        "conditionId": 800,
+        "main": "Clear",
+        "description": "ciel dégagé",
+        "icon": {
+            "url": "http://openweathermap.org/img/wn/01n@2x.png",
+            "raw": "01n"
+        }
+    }
+}
