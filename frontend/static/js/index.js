@@ -1,7 +1,7 @@
-console.log("coucou");
 import Dashboard from "./views/Dashboard.js";
 import Settings from "./views/Settings.js";
-// routeur
+import Weather from "./views/Weather.js";
+// router
 //
 
 const pathToRegex = (path) =>
@@ -21,10 +21,11 @@ const getParams = (match) => {
     );
 };
 
-const routeur = async () => {
+const router = async () => {
     const routes = [
         { path: "/", view: Dashboard },
         { path: "/settings", view: Settings },
+        { path: "/weather", view: Weather },
     ];
 
     // match
@@ -55,10 +56,10 @@ const routeur = async () => {
 
 const navigateTo = (url) => {
     history.pushState(null, null, url);
-    routeur();
+    router();
 };
 
-window.addEventListener("popstate", routeur);
+window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", (e) => {
@@ -68,5 +69,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    routeur();
+    router();
 });

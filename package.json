@@ -1,11 +1,10 @@
 {
     "name": "tp1",
     "version": "1.0.0",
-    "description": "",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node config.js"
+        "start": "node server.js"
     },
     "keywords": [],
     "author": "",
@@ -15,6 +14,16 @@
         "express": "^4.18.2",
         "install": "^0.13.0",
         "npm": "^9.4.2",
+        "openweather-api-node": "^2.1.0",
         "request": "^2.88.2"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nicolasgodineau/REST_API_Node.js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nicolasgodineau/REST_API_Node.js/issues"
+    },
+    "homepage": "https://github.com/nicolasgodineau/REST_API_Node.js#readme",
+    "description": ""
 }
