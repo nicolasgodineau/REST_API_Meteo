@@ -12,6 +12,7 @@ let weather = new OpenWeatherAPI({
     key: "98223b4c103f8a619c647cc3565cfa5b",
     locationName: "paris",
     units: "metric",
+    language: "fr",
 });
 
 app.use(
