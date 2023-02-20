@@ -6,28 +6,42 @@ const request = require("request");
 const { PORT } = require("./config.js");
 const { API_KEY } = require("./config.js");
 
-const { OpenWeatherAPI } = require("openweather-api-node");
-
-let weather = new OpenWeatherAPI({
-    key: "98223b4c103f8a619c647cc3565cfa5b",
-    locationName: "paris",
-    units: "metric",
-    language: "fr",
-});
-
 app.use(
     "/static",
     express.static(path.resolve(__dirname, "frontend", "static"))
 );
+
 app.get("/*", function (req, res) {
-    weather.getCurrent().then((data) => {
-        // Current temperature is defined in weatherModel.weather.temp.cur
-        // If you are not sure what is weather model check it out in docs
-        let newData = JSON.stringify(data);
-        fs.writeFile("./frontend/static/js/views/data.json", newData, (err) => {
-            if (err) throw err;
-        });
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=${API_KEY}`;
+    request(url, function (err, response, body) {
+        // Ajoute la l'heure et permet de formater le fichier JSON
+        weather = JSON.parse(body);
+
+        // Ajout de l'heure
+        let today = new Date();
+        let time =
+            today.getHours() +
+            ":" +
+            today.getMinutes() +
+            ":" +
+            today.getSeconds();
+
+        // Ajout de l'heure dans le fichier Json
+        weather.time = time;
+
+        // Les arguments de stringify permetent le formatage du fichier Json
+        weather = JSON.stringify(weather, null, 2);
+
+        // Ecriture du fichier meteo.json
+        fs.writeFile(
+            "./frontend/static/js/views/meteo.json",
+            weather,
+            (err) => {
+                if (err) throw err;
+            }
+        );
     });
+
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
 

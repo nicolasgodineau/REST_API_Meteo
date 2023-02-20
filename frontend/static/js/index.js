@@ -1,6 +1,7 @@
 import Dashboard from "./views/Dashboard.js";
 import Settings from "./views/Settings.js";
 import Weather from "./views/Weather.js";
+import Test from "./views/Test.js";
 // router
 //
 
@@ -26,6 +27,7 @@ const router = async () => {
         { path: "/", view: Dashboard },
         { path: "/settings", view: Settings },
         { path: "/weather", view: Weather },
+        { path: "/test", view: Test },
     ];
 
     // match

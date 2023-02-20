@@ -9,16 +9,17 @@ export default class extends AbstractView {
     }
     async getHtml() {
         async function getData(url) {
+            console.log(url);
             const response = await fetch(url);
             return response.json();
         }
 
-        const data = await getData("/static/js/views/data.json");
-        console.log("data:", data.weather);
+        const data = await getData("/static/js/views/meteo.json");
+        console.log("data:", data);
 
         return `
                 <h1>Weather</h1>
-                <p>La météo est ${data.weather.temp.cur}\u00B0C</p>
+                <p>La météo est ${data.main.temp}\u00B0C</p>
                 `;
     }
 }
