@@ -11,13 +11,61 @@ app.use(
     express.static(path.resolve(__dirname, "frontend", "static"))
 );
 
-app.get("/*", function (req, res) {
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=${API_KEY}`;
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+);
+
+app.post("/myform", function (req, res) {
+    console.log(req.body.mytext); //mytext is the name of your input box
+});
+
+app.get("/", function (req, res) {
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=Montreal&units=metric&appid=${API_KEY}`;
     request(url, function (err, response, body) {
         // Ajoute la l'heure et permet de formater le fichier JSON
         weather = JSON.parse(body);
 
-        // Ajout de l'heure
+        // Création de l'heure
+        let today = new Date();
+        let time =
+            today.getHours() +
+            ":" +
+            today.getMinutes() +
+            ":" +
+            today.getSeconds();
+
+        // Ajout de l'heure dans le fichier Json
+        weather.time = time;
+
+        // Les arguments de stringify permetent le formatage du fichier Json
+        weather = JSON.stringify(weather, null, 2);
+
+        // Ecriture du fichier meteo.json
+        fs.writeFile(
+            "./frontend/static/js/views/meteo.json",
+            weather,
+            (err) => {
+                if (err) throw err;
+            }
+        );
+    });
+
+    res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
+});
+
+app.post("/weather", function (req, res) {
+    // récupère le texte de l'input
+    city = req.body.city;
+    console.log("city:", city);
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+    console.log("url:", url);
+    request(url, function (err, response, body) {
+        // Ajoute la l'heure et permet de formater le fichier JSON
+        weather = JSON.parse(body);
+
+        // Création de l'heure
         let today = new Date();
         let time =
             today.getHours() +
