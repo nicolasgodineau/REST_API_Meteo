@@ -8,6 +8,14 @@ export default class extends AbstractView {
         this.setTitle("Dashboard");
     }
     async getHtml() {
+        async function getData(url) {
+            console.log(url);
+            const response = await fetch(url);
+            return response.json();
+        }
+
+        const data = await getData("/static/js/views/meteo.json");
+        console.log("data:", data);
         return `
                     
                     <img class="h-[1000px] fixed" src="./static/img/Ipad.png" alt="">
@@ -23,13 +31,13 @@ export default class extends AbstractView {
                     class="text-gray-300 hover:bg-gray-700 hover:text-white  px-3 py-2 rounded-md text-sm font-medium nav__link"
                     data-link>About</a>
             </nav>
-            <div class=" w-full h-full flex flex-col items-center justify-center gap-10 p-2">
-                <h1 class="text-white uppercase">Dashbord</h1>
-                <form action="/weather" method="POST">
-                <input type="text" name="city" required />
-                <input class="text-white" type="submit" value="Submit" />
-            </form>
-            </div>
+            <div class="flex flex-col items-center gap-3">
+            <p class="text-white px-3 py-2 rounded-md text-xl font-medium z-10">${data.name}</p>
+            <img class="h-64" src="/static/img/${data.weather[0].icon}.svg" alt="">
+            <p class="text-white px-3 py-2 rounded-md text-m font-medium">${data.weather[0].description}</p>
+            <p class="text-white text-8xl font-thin z-10">${data.main.temp}\u00B0C</p>
+            <small class="text-white font-thin ">Température actuelle</small>
+        </div>
         </div>
                 
                 `;

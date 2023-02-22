@@ -71,3 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     router();
 });
+
+/* document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", (e) => {
+        if (e.target.matches("[data-form]")) {
+            e.preventDefault();
+            //navigateTo(e.target.href);
+        }
+    });
+
+    router();
+}); */

@@ -1,45 +1,48 @@
 {
-  "coord": {
-    "lon": -73.5878,
-    "lat": 45.5088
-  },
-  "weather": [
+  "data": [
     {
-      "id": 804,
-      "main": "Clouds",
-      "description": "overcast clouds",
-      "icon": "04d"
+      "coord": {
+        "lon": -73.5878,
+        "lat": 45.5088
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "overcast clouds",
+          "icon": "04n"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": -7.17,
+        "feels_like": -10.9,
+        "temp_min": -9.17,
+        "temp_max": -6.33,
+        "pressure": 1024,
+        "humidity": 53
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 2.06,
+        "deg": 90
+      },
+      "clouds": {
+        "all": 100
+      },
+      "dt": 1677109809,
+      "sys": {
+        "type": 1,
+        "id": 498,
+        "country": "CA",
+        "sunrise": 1677066330,
+        "sunset": 1677105035
+      },
+      "timezone": -18000,
+      "id": 6077243,
+      "name": "Montreal",
+      "cod": 200,
+      "time": "18:51:17"
     }
-  ],
-  "base": "stations",
-  "main": {
-    "temp": -7.22,
-    "feels_like": -10.52,
-    "temp_min": -8.06,
-    "temp_max": -5.49,
-    "pressure": 999,
-    "humidity": 67
-  },
-  "visibility": 10000,
-  "wind": {
-    "speed": 1.79,
-    "deg": 90,
-    "gust": 3.13
-  },
-  "clouds": {
-    "all": 100
-  },
-  "dt": 1677013618,
-  "sys": {
-    "type": 2,
-    "id": 2013133,
-    "country": "CA",
-    "sunrise": 1676980030,
-    "sunset": 1677018550
-  },
-  "timezone": -18000,
-  "id": 6077243,
-  "name": "Montreal",
-  "cod": 200,
-  "time": "16:13:36"
+  ]
 }
