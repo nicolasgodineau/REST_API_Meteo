@@ -17,7 +17,7 @@ export default class extends AbstractView {
         console.log("data:", weather);
 
         return `
-                <img class="h-[1000px] max-w-max" src="./static/img/Ipad.png" alt="">
+                <img class="h-[1000px] max-w-max" src="./static/img/Ipad.webp" alt="">
         
                 <div class="absolute top-[50px] left-[367px] h-[730px] w-[550px] p-2 flex flex-col">
                     <nav class="w-full p-2 flex items-center justify-center gap-3">
@@ -32,7 +32,7 @@ export default class extends AbstractView {
                     </nav>
                     <div class="h-full flex flex-col items-center justify-center gap-10">
                     <div class="flex flex-col items-center justify-center">
-                        <img class="h-16" src="/static/img/${
+                        <img class="h-16" src="/static/img/icon/${
                             weather.data[0].list[0].weather[0].icon
                         }.svg" alt="">
                         <p class="text-white text-m font-medium">${weather.data[0].list[0].main.temp.toFixed(
@@ -43,7 +43,7 @@ export default class extends AbstractView {
                         }</p>
                     </div>
                     <div class="flex flex-col items-center justify-center">
-                    <img class="h-16" src="/static/img/${
+                    <img class="h-16" src="/static/img/icon/${
                         weather.data[0].list[1].weather[0].icon
                     }.svg" alt="">
                         <p class="text-white text-m font-medium">${weather.data[0].list[1].main.temp.toFixed(
@@ -54,7 +54,7 @@ export default class extends AbstractView {
                         }</p>
                     </div>
                     <div class="flex flex-col items-center justify-center">
-                    <img class="h-16" src="/static/img/${
+                    <img class="h-16" src="/static/img/icon/${
                         weather.data[0].list[2].weather[0].icon
                     }.svg" alt="">
                         <p class="text-white text-m font-medium">${weather.data[0].list[2].main.temp.toFixed(
@@ -65,7 +65,7 @@ export default class extends AbstractView {
                         }</p>
                     </div>
                     <div class="flex flex-col items-center justify-center">
-                    <img class="h-16" src="/static/img/${
+                    <img class="h-16" src="/static/img/icon/${
                         weather.data[0].list[3].weather[0].icon
                     }.svg" alt="">
                         <p class="text-white text-m font-medium">${weather.data[0].list[3].main.temp.toFixed(

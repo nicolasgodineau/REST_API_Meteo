@@ -14,7 +14,7 @@ export default class extends AbstractView {
         const weather = await getData("/static/js/views/meteo.json");
 
         return `
-        <img class="h-[1000px] max-w-max" src="./static/img/Ipad.png" alt="">
+        <img class="h-[1000px] max-w-max" src="./static/img/Ipad.webp" alt="">
 
         <div class="absolute top-[50px] left-[367px] h-[730px] w-[550px] p-2 flex flex-col">
             <nav class="w-full p-2 flex items-center justify-center gap-3">
@@ -36,7 +36,7 @@ export default class extends AbstractView {
                             weather.data[0].time
                         }</p>
                     </div>
-                    <img class="h-64" src="/static/img/${
+                    <img class="h-64" src="/static/img/icon/${
                         weather.data[0].weather[0].icon
                     }.svg" alt="">
                     <p class="text-white px-3 py-2 rounded-md text-m font-medium">${

@@ -6,7 +6,7 @@ export default class extends AbstractView {
     }
     async getHtml() {
         return `
-        <img class="h-[1000px] max-w-max" src="./static/img/Ipad.png" alt="">
+        <img class="h-[1000px] max-w-max" src="./static/img/Ipad.webp" alt="">
         
         <div class="absolute top-[50px] left-[367px] h-[730px] w-[550px] p-2 flex flex-col">
             <nav class="w-full p-2 flex items-center justify-center gap-3">

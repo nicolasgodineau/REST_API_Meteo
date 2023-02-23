@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                ipad: "url('./frontend/static/img/Ipad.png')",
+                ipad: "url('./frontend/static/img/Ipad.webp')",
             },
         },
     },
