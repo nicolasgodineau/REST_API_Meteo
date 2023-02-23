@@ -6,13 +6,11 @@ export default class extends AbstractView {
     }
     async getHtml() {
         async function getData(url) {
-            console.log(url);
             const response = await fetch(url);
             return response.json();
         }
 
         const weather = await getData("/static/js/json/meteo.json");
-        console.log("weather:", weather);
 
         return `
 
@@ -40,6 +38,7 @@ export default class extends AbstractView {
                     }.svg" alt="">
                     <p class="text-white px-3 py-2 rounded-md text-m font-medium">${weather.data[0].weather[0].description.toUpperCase()}</p>
                     <div class="w-full flex items-center justify-between">
+                    
                         <div>
                             <p class="text-white px-3 py-2 rounded-md text-sm font-medium z-10">Temp min.
                                 ${weather.data[0].main.temp_min.toFixed(
