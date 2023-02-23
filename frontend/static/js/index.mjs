@@ -1,5 +1,4 @@
 import Dashboard from "./views/Dashboard.js";
-import Settings from "./views/Settings.js";
 import Weather from "./views/Weather.js";
 import About from "./views/About.js";
 
@@ -23,7 +22,6 @@ const getParams = (match) => {
 const router = async () => {
     const routes = [
         { path: "/", view: Dashboard },
-        { path: "/settings", view: Settings },
         { path: "/weather", view: Weather },
         { path: "/about", view: About },
     ];
