@@ -19,7 +19,7 @@ const CITY_NAME = "montreal";
     longitude = city.lon;
 
     // Permet de récupérer les données météo pour 5 jours
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}&lang=fr`;
     const { data: forecast } = await axios.get(forecastUrl);
 
     // Conversion de la data en Json avec indentation
@@ -35,7 +35,7 @@ const CITY_NAME = "montreal";
     );
 
     // Permet de récupérer la donné météo sur le moment
-    const currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&units=metric&appid=${API_KEY}`;
+    const currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&units=metric&appid=${API_KEY}&lang=fr`;
     const { data: current } = await axios.get(currentUrl);
 
     // Ajout de l'heure dans la data
