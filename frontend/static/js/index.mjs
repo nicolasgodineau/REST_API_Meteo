@@ -2,9 +2,8 @@ import Dashboard from "./views/Dashboard.js";
 import Weather from "./views/Weather.js";
 import About from "./views/About.js";
 
-const pathToRegex = (path) => {
+const pathToRegex = (path) =>
     new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
-};
 
 const getParams = (match) => {
     const values = match.result.slice(1);
