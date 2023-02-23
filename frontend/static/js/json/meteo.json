@@ -15,12 +15,12 @@
       ],
       "base": "stations",
       "main": {
-        "temp": -11.36,
-        "feels_like": -18.36,
+        "temp": -11.49,
+        "feels_like": -18.49,
         "temp_min": -12.17,
-        "temp_max": -10.51,
-        "pressure": 1017,
-        "humidity": 80
+        "temp_max": -10.85,
+        "pressure": 1016,
+        "humidity": 78
       },
       "visibility": 4828,
       "wind": {
@@ -31,7 +31,7 @@
       "clouds": {
         "all": 100
       },
-      "dt": 1677184112,
+      "dt": 1677185949,
       "sys": {
         "type": 2,
         "id": 2013133,
@@ -43,7 +43,7 @@
       "id": 6077243,
       "name": "Montréal",
       "cod": 200,
-      "time": "15:30:02 "
+      "time": "16:10:02 "
     }
   ]
 }
