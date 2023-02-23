@@ -1,0 +1,42 @@
+(async () => {
+    // Premet de récupérer la latitude et longitude de la ville
+    const cityUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${CITY_NAME}&limit=5&appid=${API_KEY}`;
+    const {
+        data: [city],
+    } = await axios.get(cityUrl);
+    latitude = city.lat;
+    longitude = city.lon;
+
+    // Permet de récupérer les données météo pour 5 jours
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}&lang=fr`;
+    const { data: forecast } = await axios.get(forecastUrl);
+
+    // Conversion de la data en Json avec indentation
+    weather = JSON.stringify({ data: [forecast] }, null, 2);
+
+    // Ecriture du fichier .json
+    fs.writeFile(
+        "./frontend/static/js/views/meteoPrevision.json",
+        weather,
+        (err) => {
+            if (err) throw err;
+        }
+    );
+
+    // Permet de récupérer la donné météo sur le moment
+    const currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&units=metric&appid=${API_KEY}&lang=fr`;
+    const { data: current } = await axios.get(currentUrl);
+
+    // Ajout de l'heure dans la data
+    const today = new Date();
+    const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+    current.time = time;
+
+    // Conversion de la data en Json avec indentation
+    weather = JSON.stringify({ data: [current] }, null, 2);
+
+    // Ecriture du fichier .json
+    fs.writeFile("./frontend/static/js/views/meteo.json", weather, (err) => {
+        if (err) throw err;
+    });
+})();

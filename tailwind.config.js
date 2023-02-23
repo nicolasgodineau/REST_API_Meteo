@@ -2,11 +2,7 @@
 module.exports = {
     content: ["./frontend/static/**/*.{html,js}"],
     theme: {
-        extend: {
-            backgroundImage: {
-                ipad: "url('./frontend/static/img/Ipad.webp')",
-            },
-        },
+        extend: {},
     },
     plugins: [],
 };

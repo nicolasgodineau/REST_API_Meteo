@@ -2,7 +2,7 @@ import AbstractView from "./AbstractView.js";
 export default class extends AbstractView {
     constructor(params) {
         super(params);
-        this.setTitle("Dashboard");
+        this.setTitle("Weather Now");
     }
     async getHtml() {
         async function getData(url) {
@@ -12,13 +12,12 @@ export default class extends AbstractView {
         }
 
         const weather = await getData("/static/js/views/meteo.json");
+        console.log("weather:", weather);
 
         return `
-        <img class="h-[1000px] max-w-max" src="./static/img/Ipad.webp" alt="">
 
-        <div class="absolute top-[50px] left-[367px] h-[730px] w-[550px] p-2 flex flex-col">
             <nav class="w-full p-2 flex items-center justify-center gap-3">
-                <a href="/" class="bg-gray-900 text-white  px-3 py-2 rounded-md text-sm font-medium nav__link" data-link
+                <a href="/" class="bg-gray-900 text-white underline px-3 py-2 rounded-md text-sm font-medium nav__link" data-link
                     >Now</a>
                 <a href="/weather"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium nav__link"
@@ -39,9 +38,7 @@ export default class extends AbstractView {
                     <img class="h-64" src="/static/img/icon/${
                         weather.data[0].weather[0].icon
                     }.svg" alt="">
-                    <p class="text-white px-3 py-2 rounded-md text-m font-medium">${
-                        weather.data[0].weather[0].description
-                    }</p>
+                    <p class="text-white px-3 py-2 rounded-md text-m font-medium">${weather.data[0].weather[0].description.toUpperCase()}</p>
                     <div class="w-full flex items-center justify-between">
                         <div>
                             <p class="text-white px-3 py-2 rounded-md text-sm font-medium z-10">Temp min.

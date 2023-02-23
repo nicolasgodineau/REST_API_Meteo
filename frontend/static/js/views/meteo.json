@@ -7,6 +7,12 @@
       },
       "weather": [
         {
+          "id": 600,
+          "main": "Snow",
+          "description": "légères chutes de neige",
+          "icon": "13d"
+        },
+        {
           "id": 701,
           "main": "Mist",
           "description": "brume",
@@ -15,26 +21,29 @@
       ],
       "base": "stations",
       "main": {
-        "temp": -12.46,
-        "feels_like": -19.46,
-        "temp_min": -13.17,
-        "temp_max": -11.66,
-        "pressure": 1019,
-        "humidity": 80
+        "temp": -11.59,
+        "feels_like": -18.59,
+        "temp_min": -12.21,
+        "temp_max": -10.85,
+        "pressure": 1018,
+        "humidity": 82
       },
-      "visibility": 6437,
+      "visibility": 2012,
       "wind": {
-        "speed": 10.29,
+        "speed": 8.75,
         "deg": 40,
-        "gust": 13.89
+        "gust": 13.38
+      },
+      "snow": {
+        "1h": 0.11
       },
       "clouds": {
         "all": 100
       },
-      "dt": 1677164312,
+      "dt": 1677179450,
       "sys": {
-        "type": 1,
-        "id": 498,
+        "type": 2,
+        "id": 2013133,
         "country": "CA",
         "sunrise": 1677152629,
         "sunset": 1677191520
@@ -43,7 +52,7 @@
       "id": 6077243,
       "name": "Montréal",
       "cod": 200,
-      "time": "10:1:50"
+      "time": "14:22:19 "
     }
   ]
 }
