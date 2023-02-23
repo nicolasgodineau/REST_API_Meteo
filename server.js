@@ -3,11 +3,9 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const fs = require("fs");
-const request = require("request");
 const { PORT } = require("./config.js");
 const { API_KEY } = require("./config.js");
 const CITY_NAME = "montreal";
-const cityUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${CITY_NAME}&limit=5&appid=${API_KEY}`;
 
 // Récupération de la longitude et latitude de la ville
 async function getlocalisation() {
@@ -40,7 +38,7 @@ async function getlocalisation() {
 
         // Ecriture du fichier .json
         fs.writeFile(
-            "./frontend/static/js/views/meteoPrevision.json",
+            "./frontend/static/js/json/meteoPrevision.json",
             weather,
             (err) => {
                 if (err) throw err;
@@ -66,13 +64,9 @@ async function getlocalisation() {
         weather = JSON.stringify({ data: [current] }, null, 2);
 
         // Ecriture du fichier .json
-        fs.writeFile(
-            "./frontend/static/js/views/meteo.json",
-            weather,
-            (err) => {
-                if (err) throw err;
-            }
-        );
+        fs.writeFile("./frontend/static/js/json/meteo.json", weather, (err) => {
+            if (err) throw err;
+        });
     } catch (error) {
         console.error(error);
     }

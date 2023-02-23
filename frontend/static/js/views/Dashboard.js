@@ -11,7 +11,7 @@ export default class extends AbstractView {
             return response.json();
         }
 
-        const weather = await getData("/static/js/views/meteo.json");
+        const weather = await getData("/static/js/json/meteo.json");
         console.log("weather:", weather);
 
         return `

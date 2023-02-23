@@ -5,16 +5,12 @@ export default class extends AbstractView {
         this.setTitle("Weather forecast");
     }
     async getHtml() {
-        console.log(this.params.id);
-
         async function getData(url) {
-            console.log(url);
             const response = await fetch(url);
             return response.json();
         }
 
-        const weather = await getData("/static/js/views/meteoPrevision.json");
-        console.log("data:", weather);
+        const weather = await getData("/static/js/json/meteoPrevision.json");
 
         return `
                     <nav class="w-full p-2 flex items-center justify-center gap-3">
